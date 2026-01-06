@@ -5,7 +5,8 @@ Main Application Window
 from PyQt5.QtWidgets import (QMainWindow, QTabWidget, QMessageBox, QFileDialog,
                              QDialog, QVBoxLayout, QHBoxLayout, QLabel, QTableWidget,
                              QTableWidgetItem, QPushButton, QComboBox, QSpinBox,
-                             QHeaderView, QGroupBox, QFormLayout, QLineEdit, QActionGroup)
+                             QHeaderView, QGroupBox, QFormLayout, QLineEdit, QActionGroup,
+                             QStatusBar)
 from PyQt5.QtCore import Qt, QDate, QSettings
 from ui.accounts_tab import AccountsTab
 from ui.categories_tab import CategoriesTab
@@ -244,6 +245,11 @@ class MainWindow(QMainWindow):
         self.transactions_tab.transactions_changed.connect(self.on_transactions_changed)
 
         self.setCentralWidget(self.tabs)
+
+        # Add status bar with developer credit
+        status_bar = QStatusBar()
+        status_bar.showMessage("Developed by George Mikhael")
+        self.setStatusBar(status_bar)
 
     def create_menu_bar(self):
         """Create menu bar"""
@@ -521,7 +527,7 @@ class MainWindow(QMainWindow):
         QMessageBox.about(
             self,
             "About Personal Finance Tracker",
-            "<h3>Personal Finance Tracker v1.0</h3>"
+            "<h3>Personal Finance Tracker v1.1</h3>"
             "<p>A simple, offline desktop application for managing personal finances.</p>"
             "<p><b>Features:</b></p>"
             "<ul>"
@@ -534,6 +540,8 @@ class MainWindow(QMainWindow):
             "<li>Multiple themes (White, Night, Night Blue)</li>"
             "</ul>"
             "<p>Built with Python and PyQt5</p>"
+            "<p style='margin-top: 15px; padding-top: 10px; border-top: 1px solid #ccc;'>"
+            "<b>Developed by George Mikhael</b></p>"
         )
 
     def closeEvent(self, event):
