@@ -38,7 +38,6 @@ dist/
 installer_output/
 *.exe
 !resources/*.exe
-!release/*.exe
 
 # Logs
 *.log
