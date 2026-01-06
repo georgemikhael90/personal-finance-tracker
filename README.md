@@ -44,7 +44,7 @@ A simple, offline desktop application for managing personal finances - similar t
 
 2. **Install Dependencies**
    ```batch
-   cd "C:\Users\georg\Desktop\Personal Financial Tracker"
+   cd "C:\Users\[YourUsername]\Desktop\Personal Financial Tracker"
    pip install -r requirements.txt
    ```
 
@@ -57,7 +57,7 @@ A simple, offline desktop application for managing personal finances - similar t
 
 1. **Run the Build Script**
    ```batch
-   cd "C:\Users\georg\Desktop\Personal Financial Tracker"
+   cd "C:\Users\[YourUsername]\Desktop\Personal Financial Tracker"
    build_windows.bat
    ```
 
@@ -325,5 +325,7 @@ This software is provided as-is for personal use.
 
 **Version**: 1.1
 **Last Updated**: January 2026
+**Developed by George Mikhael
+**Email: georgemikhael@hotmail.co.uk
 **Developed by**: George Mikhael
 **Built with**: Python, PyQt5, SQLite, Matplotlib
