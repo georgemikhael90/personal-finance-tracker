@@ -323,6 +323,7 @@ This software is provided as-is for personal use.
 
 ---
 
-**Version**: 1.0
+**Version**: 1.1
 **Last Updated**: January 2026
+**Developed by**: George Mikhael
 **Built with**: Python, PyQt5, SQLite, Matplotlib

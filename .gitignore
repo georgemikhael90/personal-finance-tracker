@@ -38,6 +38,7 @@ dist/
 installer_output/
 *.exe
 !resources/*.exe
+!release/*.exe
 
 # Logs
 *.log
@@ -54,3 +55,6 @@ Desktop.ini
 
 # Downloaded installer
 innosetup-installer.exe
+
+# Claude Code
+.claude/

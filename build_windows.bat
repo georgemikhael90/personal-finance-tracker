@@ -14,7 +14,14 @@ if errorlevel 1 (
 )
 
 echo.
-echo Installing dependencies...
+echo Cleaning previous build artifacts...
+if exist build rmdir /s /q build
+if exist dist rmdir /s /q dist
+if exist PersonalFinanceTracker.spec del /q PersonalFinanceTracker.spec
+
+echo.
+echo Installing/upgrading dependencies...
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 if errorlevel 1 (
     echo ERROR: Failed to install dependencies
@@ -24,6 +31,7 @@ if errorlevel 1 (
 
 echo.
 echo Building executable with PyInstaller...
+echo This may take several minutes...
 pyinstaller --name="PersonalFinanceTracker" ^
     --onefile ^
     --windowed ^
@@ -32,6 +40,7 @@ pyinstaller --name="PersonalFinanceTracker" ^
     --hidden-import matplotlib ^
     --hidden-import pandas ^
     --icon=resources/app_icon.ico ^
+    --clean ^
     main.py
 
 if errorlevel 1 (
